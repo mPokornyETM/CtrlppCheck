@@ -150,7 +150,7 @@
 </rule>
 <!-- END OF: DEBUG -->
 <rule version="1">
-	<tokenlist>normal</tokenlist>
+	<tokenlist>simple</tokenlist>
 	<pattern>system \( \S+ </pattern>
 	<message>
 	    <id>quoted_params_system</id>
@@ -164,7 +164,7 @@
 </rule>
 <rule version="1">
 	<tokenlist>normal</tokenlist>
-	<pattern>system \( \S+ </pattern>
+	<pattern>system \( </pattern>
 	<message>
 	    <id>unsafe_system_call</id>
 		<severity>warning</severity>
@@ -177,7 +177,7 @@
 </rule>
 <rule version="1">
 	<tokenlist>raw</tokenlist>
-	<pattern>makeError \( \S+ , \S+ , \S+ , 0 </pattern>
+	<pattern>makeError \( \S+ , 0 </pattern>
 	<message>
 	    <id>fatal_program_exit</id>
 		<severity>warning</severity>

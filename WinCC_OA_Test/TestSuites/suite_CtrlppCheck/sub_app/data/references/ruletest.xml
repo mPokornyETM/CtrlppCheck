@@ -11,5 +11,30 @@
         <error id="badFunc_style_DebugN" severity="style" msg="Use throwError() instead of DebugN() functions" verbose="Use throwError() instead of DebugN() functions">
             <location file0="" file="" line="8"/>
         </error>
+        <error id="badFunc_style_DebugN" severity="style" msg="Use throwError() instead of DebugN() functions" verbose="Use throwError() instead of DebugN() functions">
+            <location file0="" file="" line="8"/>
+        </error>
+        <error id="fatal_program_exit" severity="warning" msg="Throw error with FATAL priority stop the program." verbose="\011\011Throwing a error with FATAL priority leads to stop the program.\012\011\011Verify that this scenario is accepted and suppres this warning by\012\011\011//ctrlppcheck-suppress fatal_program_exit">
+            <location file0="" file="" line="36"/>
+            <symbol>makeError ( "" , 0 </symbol>
+        </error>
+        <error id="fatal_program_exit" severity="warning" msg="Throw error with FATAL priority stop the program." verbose="\011\011Throwing a error with FATAL priority leads to stop the program.\012\011\011Verify that this scenario is accepted and suppres this warning by\012\011\011//ctrlppcheck-suppress fatal_program_exit">
+            <location file0="" file="" line="37"/>
+            <symbol>makeError ( "" , 0 </symbol>
+        </error>
+        <error id="fatal_program_exit" severity="warning" msg="Throw error with FATAL priority stop the program." verbose="\011\011Throwing a error with FATAL priority leads to stop the program.\012\011\011Verify that this scenario is accepted and suppres this warning by\012\011\011//ctrlppcheck-suppress fatal_program_exit">
+            <location file0="" file="" line="38"/>
+            <symbol>makeError ( "" , 0 </symbol>
+        </error>
+        <error id="fatal_program_exit" severity="warning" msg="Throw error with FATAL priority stop the program." verbose="\011\011Throwing a error with FATAL priority leads to stop the program.\012\011\011Verify that this scenario is accepted and suppres this warning by\012\011\011//ctrlppcheck-suppress fatal_program_exit">
+            <location file0="" file="" line="39"/>
+            <symbol>makeError ( "" , 0 </symbol>
+        </error>
+        <error id="badPerformanceInLoops" severity="performance" msg="Non-performing usage of a function in a loop: dpGet" verbose="Non-performing usage of a function in a loop: dpGet" cwe="398" inconclusive="true">
+            <location file0="" file="" line="13"/>
+        </error>
+        <error id="badPerformanceInLoops" severity="performance" msg="Non-performing usage of a function in a loop: dpGet" verbose="Non-performing usage of a function in a loop: dpGet" cwe="398" inconclusive="true">
+            <location file0="" file="" line="19"/>
+        </error>
     </errors>
 </results>

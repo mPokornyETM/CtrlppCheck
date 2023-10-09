@@ -10,7 +10,6 @@
 //--------------------------------------------------------------------------------
 // used libraries (#uses)
 #uses "classes/ErrorHdl/OaLogger"
-#uses "classes/QualityGates/AddOn/FileSys/QgAddOnTmpSourceDir"
 #uses "classes/QualityGates/QgResultPublisher"
 #uses "classes/oaTest/OaTest"
 #uses "classes/QualityGates/Qg"

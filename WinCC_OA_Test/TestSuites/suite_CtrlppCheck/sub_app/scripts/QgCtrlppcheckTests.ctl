@@ -23,7 +23,7 @@ class MockCppCheck : CppCheck
   {
     string s;
     fileToString(testFile, s);
-    s = substr(s, 0, strpos(s, "\n")); // get fist lines
+    s = substr(s, 0, strpos(s, "\n")); // get first line
     const string key = "// start options: ";
     int idx = strpos(s, key);
     if ( idx >= 0 )
@@ -31,14 +31,12 @@ class MockCppCheck : CppCheck
     else
       s = "";
 
-    DebugN(__FUNCTION__, testFile, s);
     start(testFile + s);
     stdErrToErrList();
   }
 
   public void compare(const string &refFile)
   {
-    DebugTN(__FUNCTION__, refFile);
     const string tcId = "Ctrlppcheck." +  baseName(refFile);
     string str;
     bool hasFailedRead = fileToString(refFile, str, "UTF8");
@@ -128,7 +126,7 @@ class TstCtrlppcheck : OaTest
         // check.settings.enableHeadersCheck = TRUE;
         check.settings.includeSubProjects = TRUE; 	
         check.settings.inconclusive = FALSE;
-        check.settings.verbose = FALSE;
+        check.settings.verbose = TRUE;
         check.settings.inlineSuppressions = FALSE;
 
         // load configs
