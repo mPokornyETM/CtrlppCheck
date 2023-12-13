@@ -1,0 +1,9 @@
+@page glossary Glossary
+ \tableofcontents
+ 
+ This glossary explains terms that are related to...
+
+@section glossary1 Term1 ... 
+
+@section glossary2 Term2 ... 
+

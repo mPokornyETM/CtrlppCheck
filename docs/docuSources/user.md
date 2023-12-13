@@ -53,43 +53,6 @@ Both types of checks can be used in WinCC OA's GEDI editor via. They are started
 
 Both types of checks may also be executed from the command line to facilitate integration in automated build environments for continuous integration. Results are provided via result files for further processing.  
 
-# System Requirements And Installation
-
-Hardware requirements
----------------------
-
-see WinCC OA online documentation [link](https://www.winccoa.com/documentation/WinCCOA/latest/en_US/GettingStarted/GettingStarted-13_2.html)
-
-Software requirements
----------------------
-
-for basic requirements see WinCC OA online documentation [link](https://www.winccoa.com/documentation/WinCCOA/latest/en_US/GettingStarted/GettingStarted-13_2.html)
-
-python must be installed; min. V3.6
-
-## Installation
-
-_currently only manual integration, see steps below_
-
-# How To use
-
-## Usage in WinCC OA project
-
-1. Create new WinCC OA Project (With DB)
-1. Add subproject **_WinCCOA_QualityChecks_**
-1. Import Dp-List WinCCOA_QualityChecks\dplist\WinCCOA_QualityChecks.dpl
-1. Put the ctrlppcheck binary in a folder called "ctrlppcheck" in the bin folder of the **_WinCCOA_QualityChecks_** subproject. (If you want to put it in a different folder you must add the path to it to the config file: [qualityChecks] ctrlppcheckPath="yourpathtobinary")
-1. Restart your GEdi
-1. [Optional] Adapt following script to find python executable
-
-WinCCOA_QualityChecks\scripts\libs\classes\QualityGates\Tools\Python\Python.ctl
-
-``` cpp
-public static synchronized string getExecutable()
-{
-  return findExecutable("python");
-}
-```
 
 # Quality Checks
 
