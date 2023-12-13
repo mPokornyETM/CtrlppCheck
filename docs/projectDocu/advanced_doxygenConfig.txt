@@ -34,6 +34,7 @@ ALIASES += synchronized="@attention  Synchronized reason:^^"
 ALIASES += synopsis="<b>Synopsis:</b>^^"
 ALIASES += var_type="<strong>Variable type:</strong>^^"
 ALIASES += exampleDescription="<strong>Example:</strong>^^"
+ALIASES += obsolete="@deprecated^^"
 
 # eliminate many warnings
 # TODO fix it

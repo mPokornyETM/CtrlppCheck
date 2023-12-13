@@ -182,28 +182,28 @@ jobs:
       - name: Register Project
         working-directory: ${{github.workspace}}/WinCCOA_QualityChecks/
         run: |
-        cwd=$(pwd)
+          cwd=$(pwd)
 
-        mkdir -p $cwd/Projects/TfCustomizedQG/config
-        cd $cwd/Projects/TfCustomizedQG/config
+          mkdir -p $cwd/Projects/TfCustomizedQG/config
+          cd $cwd/Projects/TfCustomizedQG/config
 
-        echo "[general]
-        pvss_path = \"/opt/WinCC_OA/3.19\"
-        proj_path = \"/opt/WinCC_OA/3.19/TestFramework_3.19\"
-        proj_path = \"$cwd/Projects/Global\"
-        proj_path = \"$cwd/Projects/TfCustomizedQG\"
-        proj_version = \"3.19\"
-        langs = \"de_AT.utf8\"
-        langs = \"en_US.utf8\"
-        pmonPort = 5999
-        [testFramework]
-        installPath = \"$cwd/\"
-        " > config
+          echo "[general]
+          pvss_path = \"/opt/WinCC_OA/3.19\"
+          proj_path = \"/opt/WinCC_OA/3.19/TestFramework_3.19\"
+          proj_path = \"$cwd/Projects/Global\"
+          proj_path = \"$cwd/Projects/TfCustomizedQG\"
+          proj_version = \"3.19\"
+          langs = \"de_AT.utf8\"
+          langs = \"en_US.utf8\"
+          pmonPort = 5999
+          [testFramework]
+          installPath = \"$cwd/\"
+          " > config
 
-        mkdir -p $$cwd/Projects/TfCustomizedQG/log
-  
-        /opt/WinCC_OA/3.19/bin/WCCILpmon -config $cwd/Projects/TfCustomizedQG/config/config -n -autofreg -status  -log +stderr || true
-  
+          mkdir -p $$cwd/Projects/TfCustomizedQG/log
+
+          /opt/WinCC_OA/3.19/bin/WCCILpmon -config $cwd/Projects/TfCustomizedQG/config/config -n -autofreg -status  -log +stderr || true
+
       - name: Generate help
         working-directory: /opt/WinCC_OA/3.19/bin/
         run: |
