@@ -33,7 +33,7 @@ Continuous integration:
 
 user documentation:
 
-- [Link](docs/user.md)
+- [Link](docs/docuSources/user.md)
 
 technical documentation:
 

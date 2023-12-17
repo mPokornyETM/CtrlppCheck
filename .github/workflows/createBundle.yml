@@ -2,10 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [ "main", "release/*" , "feature/*"]
+    branches: [ "main", "release/*", "feature/*" ]
 #    tags: ["v*"]
   pull_request:
-    branches: [ "main", "release/*" ]
+    branches: [ "main", "release/*", "feature/*" ]
   release:
     types: [published]
 
@@ -186,41 +186,41 @@ jobs:
 
       - uses: actions/checkout@v1
       - name: Register Project
-        working-directory: ${{github.workspace}}/WinCCOA_QualityChecks/
+        working-directory: ${{github.workspace}}/WinCC_OA_Test/
         run: |
           cwd=$(pwd)
-  
-          mkdir -p $cwd/config
-          cd $cwd/config
-  
+
+          mkdir -p $cwd/Projects/TfCustomizedQG/config
+          cd $cwd/Projects/TfCustomizedQG/config
+
           echo "[general]
           pvss_path = \"/opt/WinCC_OA/3.19\"
-          proj_path = \"$cwd\"
+          proj_path = \"/opt/WinCC_OA/3.19/TestFramework_3.19\"
+          proj_path = \"$cwd/Projects/Global\"
+          proj_path = \"$cwd/Projects/TfCustomizedQG\"
           proj_version = \"3.19\"
           langs = \"en_US.utf8\"
           pmonPort = 5999
+          [testFramework]
+          installPath = \"$cwd/\"
           " > config
-  
-          mkdir -p $cwd/log
-  
-          /opt/WinCC_OA/3.19/bin/WCCILpmon -config $cwd/config/config -n -autofreg -status  -log +stderr || true
-  
+
+          cat config
+
+          mkdir -p $$cwd/Projects/TfCustomizedQG/log
+
+          /opt/WinCC_OA/3.19/bin/WCCILpmon -config $cwd/Projects/TfCustomizedQG/config/config -n -autofreg -status  -log +stderr || true
+
       - name: Generate help
         working-directory: /opt/WinCC_OA/3.19/bin/
         run: |
-          ./WCCOActrl -proj WinCCOA_QualityChecks -n doxygen.ctl -log +stderr -lang en_US.utf8
+          ./WCCOActrl -proj TfCustomizedQG -n buildHelp.ctl -log +stderr -lang en_US.utf8
 
       - name: Upload html help
         uses: actions/upload-artifact@v3
         with:
-          name: html-help
-          path: ${{github.workspace}}/WinCCOA_QualityChecks/help/html/*
-
-      - name: Upload QT help
-        uses: actions/upload-artifact@v3
-        with:
-          name: qt-help
-          path: ${{github.workspace}}/WinCCOA_QualityChecks/help/html/index.qch
+          name: generated-help
+          path: ${{github.workspace}}/help/html/*
 
   package:
     name: Package project and binaries
@@ -247,8 +247,8 @@ jobs:
     - name: Download help
       uses: actions/download-artifact@v3
       with:
-        name: qt-help
-        path: ${{github.workspace}}/install/WinCCOA_QualityChecks/help/index.qch
+        name: generated-help
+        path: ${{github.workspace}}/install/WinCCOA_QualityChecks/help/
 
     - name: Upload WinCCOA_QualityChecks
       uses: actions/upload-artifact@v3
@@ -381,7 +381,7 @@ jobs:
       - name: Download help
         uses: actions/download-artifact@v3
         with:
-          name: html-help
+          name: generated-help
           path: ${{github.workspace}}/docs/
 
       - name: Publish GitHub pages help

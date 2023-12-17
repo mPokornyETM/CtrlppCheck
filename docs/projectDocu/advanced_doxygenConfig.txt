@@ -1,0 +1,49 @@
+HAVE_DOT               = NO
+#DOT_PATH               = "C:\Program Files (x86)\Graphviz2.38\bin"
+QHP_NAMESPACE          = "winccoa_qualitychecks_en"
+QHP_VIRTUAL_FOLDER     = "doc" 
+
+QHP_SECT_FILTER_ATTRS = "winccoa qualitychecks en de"
+CLASS_GRAPH            = NO
+COLLABORATION_GRAPH    = NO
+GROUP_GRAPHS           = NO
+INCLUDE_GRAPH           = NO
+INCLUDED_BY_GRAPH = NO
+CALL_GRAPH = NO
+CALLER_GRAPH = NO
+GRAPHICAL_HIERARCHY = NO
+DIRECTORY_GRAPH = NO
+GENERATE_LEGEND = NO
+IMAGE_PATH = "$PROJ_PATH/data/docuSources/images"
+             
+PROJECT_NAME           = "QualityChecks"
+PROJECT_NUMBER         = ""
+                         
+GENERATE_BUGLIST = YES
+#SHOW_FILES = NO
+GENERATE_TODOLIST = YES
+
+
+
+COLS_IN_ALPHA_INDEX    = 10
+
+DISABLE_INDEX = YES
+GENERATE_TREEVIEW = YES
+
+ALIASES += synchronized="@attention  Synchronized reason:^^"
+ALIASES += synopsis="<b>Synopsis:</b>^^"
+ALIASES += var_type="<strong>Variable type:</strong>^^"
+ALIASES += exampleDescription="<strong>Example:</strong>^^"
+ALIASES += obsolete="@deprecated^^"
+
+# eliminate many warnings
+# TODO fix it
+WARN_IF_UNDOCUMENTED = NO
+WARN_IF_INCOMPLETE_DOC = NO
+WARN_NO_PARAMDOC = NO
+
+DOXYFILE_ENCODING = UTF-8
+MARKDOWN_ID_STYLE = GITHUB
+TOC_INCLUDE_HEADINGS = 10
+JAVADOC_BANNER = YES
+CREATE_SUBDIRS = YES

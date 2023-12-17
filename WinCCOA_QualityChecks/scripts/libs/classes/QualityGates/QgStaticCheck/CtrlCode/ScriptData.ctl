@@ -342,13 +342,14 @@ class ScriptData
   protected string _filePath = "";   //!< Full native path to the script.
 
   //------------------------------------------------------------------------------
-  /**
-    Validate calculation state of the script.
-    @detals There are more reasons, why the script is not calculated
+  /** Validate calculation state of the script.
+    
+    There are more reasons, why the script is not calculated
       - does not exist
       - can not be readed
       - crypted
       - ...
+
     @return Return 0 when successfull.
     */
   protected int validateIsCalucalted()

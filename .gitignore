@@ -1,11 +1,21 @@
-WinCCOA_QualityChecks/bin/ctrlppcheck/
+
 ctrlppcheck/build/
 # astyle backup files
 *.ctl.orig
 
 # WinCC OA Tests
 WinCC_OA_Test/Projects/Stored/
-WinCC_OA_Test/Results/
 WinCC_OA_Test/Projects/TfCustomizedQG/log/
 WinCC_OA_Test/Projects/TfCustomizedQG/config/config
+WinCC_OA_Test/Results/
 *.dump
+
+# WinCCOA_QualityChecks
+# ctrlppcheck executable
+WinCCOA_QualityChecks/bin/ctrlppcheck/
+# auto generated doxygen config file
+WinCCOA_QualityChecks/data/projectDocu/doxygenConfig.txt
+WinCCOA_QualityChecks/data/projectDocu/doxygenConfig.txt.bak
+# generated doxygen docu
+/help/html
+/help/log/
