@@ -2,10 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [ "main", "release/*" , "feature/*"]
+    branches: [ "main", "release/*", "feature/*" ]
 #    tags: ["v*"]
   pull_request:
-    branches: [ "main", "release/*" ]
+    branches: [ "main", "release/*", "feature/*" ]
   release:
     types: [published]
 
