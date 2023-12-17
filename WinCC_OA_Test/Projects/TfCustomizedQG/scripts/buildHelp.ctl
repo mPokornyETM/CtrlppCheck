@@ -15,9 +15,9 @@
 //-----------------------------------------------------------------------------
 /**Generate a full documentation from the project files. See also DoxygenGenerator
 */
-void main(string sourcePath)
+void main()
 {
-  const string sourcePathRoot = dirName(sourcePath);
+  const string sourcePathRoot = dirName(PROJ_PATH);
 //   const string sourcePathTests = sourcePathRoot + "WinCC_OA_Test/";
   const string sourcePathQualityChecks = sourcePathRoot + "WinCCOA_QualityChecks/";
   const string sourcePathDocs = sourcePathRoot + "docs/";
