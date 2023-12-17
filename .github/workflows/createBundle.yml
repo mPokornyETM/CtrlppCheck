@@ -379,7 +379,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: html-help
-          path: ${{github.workspace}}/public/
+          path: ${{github.workspace}}/docs/
 
       - name: Publish GitHub pages help
         uses: peaceiris/actions-gh-pages@v3
@@ -389,4 +389,4 @@ jobs:
    #     if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.WIKI_ACTION_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./docs
