@@ -214,7 +214,7 @@ jobs:
       - name: Generate help
         working-directory: /opt/WinCC_OA/3.19/bin/
         run: |
-          ./WCCOActrl -proj TfCustomizedQG -n buildHelp.ctl -log +stderr -lang en_US.utf8
+          ./WCCOActrl -proj TfCustomizedQG -n buildHelp.ctl ${{github.workspace}}/WinCCOA_QualityChecks/ -log +stderr -lang en_US.utf8
 
       - name: Upload html help
         uses: actions/upload-artifact@v3
