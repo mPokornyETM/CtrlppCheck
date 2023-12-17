@@ -22,6 +22,11 @@ void main(string sourcePath)
   const string sourcePathQualityChecks = sourcePathRoot + "WinCCOA_QualityChecks/";
   const string sourcePathDocs = sourcePathRoot + "docs/";
   const string target = sourcePathRoot + "help/";
+
+  DebugTN("sourcePathRoot", sourcePathRoot);
+  DebugTN("sourcePathQualityChecks", sourcePathQualityChecks);
+  DebugTN("sourcePathDocs", sourcePathDocs);
+  DebugTN("target", target);
   
   rmdir(target, TRUE);
 
