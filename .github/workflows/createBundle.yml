@@ -186,7 +186,7 @@ jobs:
 
       - uses: actions/checkout@v1
       - name: Register Project
-        working-directory: ${{github.workspace}}/WinCCOA_QualityChecks/
+        working-directory: ${{github.workspace}}/WinCC_OA_Test/
         run: |
           cwd=$(pwd)
 
