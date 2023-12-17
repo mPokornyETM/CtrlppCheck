@@ -219,14 +219,8 @@ jobs:
       - name: Upload html help
         uses: actions/upload-artifact@v3
         with:
-          name: html-help
+          name: generated-help
           path: ${{github.workspace}}/help/html/*
-
-      - name: Upload QT help
-        uses: actions/upload-artifact@v3
-        with:
-          name: qt-help
-          path: ${{github.workspace}}/help/html/index.qch
 
   package:
     name: Package project and binaries
@@ -253,8 +247,8 @@ jobs:
     - name: Download help
       uses: actions/download-artifact@v3
       with:
-        name: qt-help
-        path: ${{github.workspace}}/install/WinCCOA_QualityChecks/help/index.qch
+        name: generated-help
+        path: ${{github.workspace}}/install/WinCCOA_QualityChecks/help/
 
     - name: Upload WinCCOA_QualityChecks
       uses: actions/upload-artifact@v3
@@ -387,7 +381,7 @@ jobs:
       - name: Download help
         uses: actions/download-artifact@v3
         with:
-          name: html-help
+          name: generated-help
           path: ${{github.workspace}}/docs/
 
       - name: Publish GitHub pages help
