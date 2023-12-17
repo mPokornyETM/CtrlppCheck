@@ -200,11 +200,12 @@ jobs:
           proj_path = \"$cwd/Projects/TfCustomizedQG\"
           proj_version = \"3.19\"
           langs = \"de_AT.utf8\"
-          langs = \"en_US.utf8\"
           pmonPort = 5999
           [testFramework]
           installPath = \"$cwd/\"
           " > config
+
+          cat config
 
           mkdir -p $$cwd/Projects/TfCustomizedQG/log
 
