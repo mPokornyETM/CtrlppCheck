@@ -7,7 +7,9 @@ cls
 REM ---------------------------------------------------------------------------
 REM default values
 SET WINCC_OA_VERSION=3.19
-set WINCC_OA_TEST_PATH=%cd%\..\WinCC_OA_Test\
+cd ..
+set WINCC_OA_TEST_PATH=%cd%\WinCC_OA_Test\
+cd devTools
 
 REM get input params
 :loopStdIn
@@ -33,5 +35,5 @@ call registerHelperProject.cmd
 
 REM --------------------------------------------------------------------------
 REM generate help
-call %oaBinPath%WCCOActrl.exe -config %WINCC_OA_TEST_PATH%Projects\TfCustomizedQG\config\config -n buildHelp.ctl %WINCC_OA_TEST_PATH% -log +stderr -lang en_US.utf8
+call %oaBinPath%WCCOActrl.exe -config %WINCC_OA_TEST_PATH%Projects\TfCustomizedQG\config\config -n buildHelp.ctl -log +stderr -lang en_US.utf8
 

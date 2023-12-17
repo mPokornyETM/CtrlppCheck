@@ -15,9 +15,11 @@
 //-----------------------------------------------------------------------------
 /**Generate a full documentation from the project files. See also DoxygenGenerator
 */
-void main()
+void main(string sourcePathRoot)
 {
-  const string sourcePathRoot = dirName(PROJ_PATH);
+  if (sourcePathRoot.isEmpty())
+    sourcePathRoot = dirName(dirName(dirName(PROJ_PATH)));
+
 //   const string sourcePathTests = sourcePathRoot + "WinCC_OA_Test/";
   const string sourcePathQualityChecks = sourcePathRoot + "WinCCOA_QualityChecks/";
   const string sourcePathDocs = sourcePathRoot + "docs/";
@@ -27,7 +29,7 @@ void main()
   DebugTN("sourcePathQualityChecks", sourcePathQualityChecks);
   DebugTN("sourcePathDocs", sourcePathDocs);
   DebugTN("target", target);
-  
+
   rmdir(target, TRUE);
 
   /// create a dummy helper project.
@@ -64,7 +66,7 @@ void main()
   ctrlMan.setOptions(makeDynString("-n", "doxygen.ctl"));
   ctrlMan.setProj(helpProject.getId());
   ctrlMan.setNum(101);
-  
+
   GlobalStorage storage;
   storage.setValue("doxygen/projectName", helpProject.getName());
   storage.setValue("doxygen/outputDirectory", target);
@@ -87,7 +89,7 @@ void main()
   storage.removeKey("doxygen/todoLinkFormat");
 
   helpProject.deleteProj();
-  
+
   if (exitCode != 0)
   {
     throwError(makeError("", PRIO_FATAL, ERR_CONTROL, 54, "doxygen.ctl crashed", exitCode));
